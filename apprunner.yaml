@@ -3,7 +3,7 @@ runtime:
   language: java
   # Specify the supported Java version here
   javaConfiguration:
-    runtimeVersion: corretto17
+    runtimeVersion: corretto11
   environment: 
     SPRING_PROFILES_ACTIVE: "production"
     DATABASE_URL: "your_database_url"
