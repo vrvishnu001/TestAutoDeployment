@@ -16,6 +16,13 @@ run:
   # Assuming your application JAR file is named "your-application.jar" (replace with your actual name)
   command: java -jar target/demo.jar  # Replace with the actual path to your JAR file
 port: 8080
-
+version: 1.0
+runtime: corretto11
+build:
+ commands:
+ build:
+ - mvn clean package
+run:
+ command: java -Xms256m -jar target/demo-0.0.1-SNAPSHOT.jar 
 
 
