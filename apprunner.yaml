@@ -1,25 +1,8 @@
 version: 1
-
-# Define the service name
 service: com.example.demo
-
-# Specify the Java 17 runtime
 runtime: corretto17
-
-# Optional: Lock to a specific Java 17 version (e.g., 17.0.5)
-# runtime-version: 17.0.5 
-
-# Path to your Spring Boot application jar file within the deployment package
 source:
-  # Replace 'path/to/your/app.jar' with the actual path
   artifacts:
     - path: target/demo-0.0.1-SNAPSHOT.jar
       type: JAR
-
-# Configure port mapping (default is 8080)
 port: 8080
-
-# Optional: Environment variables for your application
-# environment:
-#   KEY1: value1
-#   KEY2: value2
