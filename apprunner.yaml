@@ -1,7 +1,8 @@
 version: 1
 runtime: corretto17
 build:
-  command: mvn clean package
+  commands:
+    - mvn clean package
 run:
   command: java -Xms256m -jar target/demo-0.0.1-SNAPSHOT.jar
 port: 8080
