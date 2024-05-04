@@ -1,5 +1,4 @@
 version: 1
-service: com.example.demo
 runtime: corretto17
 source:
   artifacts:
