@@ -1,28 +1,8 @@
 version: 1.0
-runtime:
-  language: java
-  javaConfiguration:
-    runtimeVersion: corretto8  # Assuming Corretto 17 is not supported, adjust if needed (check documentation)
-environment:
-  # Add any environment variables your application needs here
-  # For example:
-  # SPRING_PROFILES_ACTIVE: "production"  # Or your desired profile
-  # DATABASE_URL: "your_database_url"
-build:
-  commands:
-    # Assuming you use Maven to build and package your application as a JAR file
-    - mvn clean package
-run:
-  # Assuming your application JAR file is named "your-application.jar" (replace with your actual name)
-  command: java -jar target/demo.jar  # Replace with the actual path to your JAR file
-port: 8080
-version: 1.0
-runtime: corretto11
+runtime: corretto17
 build:
  commands:
  build:
  - mvn clean package
 run:
- command: java -Xms256m -jar target/demo-0.0.1-SNAPSHOT.jar 
-
-
+ command: java -Xms256m -jar target/demo-0.0.1-SNAPSHOT.jar
