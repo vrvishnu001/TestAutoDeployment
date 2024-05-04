@@ -1,14 +1,16 @@
 version: 1.0
-runtime: 
+runtime:
   language: java
-  # Specify the supported Java version here
   javaConfiguration:
-    runtimeVersion: corretto11
-  environment: 
-    SPRING_PROFILES_ACTIVE: "production"
-    # DATABASE_URL: "your_database_url"
-    # Add any other environment variables your application needs
-    
-build: 
-  command: "mvn clean install"
-  port: 8080
+    runtimeVersion: corretto11  # Update if needed based on supported versions
+environment:
+  SPRING_PROFILES_ACTIVE: "production"  # Or your desired profile
+  # DATABASE_URL: "your_database_url"  # Replace with your actual database URL
+  # Add any other environment variables your application needs
+build:
+  commands:
+    - mvn clean package  # Assuming you use Maven for building (adjust for Gradle if needed)
+run:
+  command: java -jar demo-0.0.1-SNAPSHOT.jar  # Replace with your actual JAR filename
+port: 8080
+
