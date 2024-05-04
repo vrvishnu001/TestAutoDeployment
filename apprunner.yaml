@@ -1,11 +1,16 @@
-version: 1.0
+version: 1
+
+# Specify the Java 17 runtime using corretto17
 runtime: corretto17
-build:
- commands:
- build:
- - mvn clean package
-run:
- command: java -Xms256m -jar target/demo-0.0.1-SNAPSHOT.jar .
- network:
- port: 8080
+
+# Path to your Spring Boot application jar file within the deployment package
+source:
+  # Replace 'path/to/your/app.jar' with the actual path
+  artifacts:
+    - path: target/demo-0.0.1-SNAPSHOT.jar
+      type: JAR
+
+# Configure port mapping (default is 8080)
+port: 8080
+
 
