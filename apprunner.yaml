@@ -6,7 +6,7 @@ runtime:
     runtimeVersion: corretto11
   environment: 
     SPRING_PROFILES_ACTIVE: "production"
-    DATABASE_URL: "your_database_url"
+    # DATABASE_URL: "your_database_url"
     # Add any other environment variables your application needs
     
 build: 
