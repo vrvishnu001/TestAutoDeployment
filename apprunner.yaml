@@ -2,24 +2,20 @@ version: 1.0
 runtime:
   language: java
   javaConfiguration:
-    runtimeVersion: corretto8  # Assuming Corretto 17 is supported (check documentation)
+    runtimeVersion: corretto8  # Assuming Corretto 17 is not supported, adjust if needed (check documentation)
 environment:
   # Add any environment variables your application needs here
   # For example:
+  # SPRING_PROFILES_ACTIVE: "production"  # Or your desired profile
   # DATABASE_URL: "your_database_url"
 build:
   commands:
-    # Assuming you use Maven to build and package your application as a WAR file
+    # Assuming you use Maven to build and package your application as a JAR file
     - mvn clean package
-    # Additional steps to copy the WAR file to a specific location within the container (optional)
-    # - cp target/*.war $APPDIR/tomcat/webapps/  # Replace with your actual WAR filename and path
-
 run:
-  # Assuming your application WAR file is named "your-app.war" (replace with your actual name)
-  command: sh -c 'catalina.sh run; wait'  # Starts Tomcat in the foreground
-  # Alternative (background process):
-  # command: sh -c 'nohup catalina.sh start &; sleep 5'  # Starts Tomcat in the background and waits 5 seconds
-
+  # Assuming your application JAR file is named "your-application.jar" (replace with your actual name)
+  command: java -jar target/demo.jar  # Replace with the actual path to your JAR file
 port: 8080
+
 
 
