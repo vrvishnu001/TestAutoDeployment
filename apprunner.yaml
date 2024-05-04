@@ -4,7 +4,7 @@ version: 1
 service: com.example.demo
 
 # Specify the Java 17 runtime
-runtime: java17
+runtime: corretto17
 
 # Optional: Lock to a specific Java 17 version (e.g., 17.0.5)
 # runtime-version: 17.0.5 
