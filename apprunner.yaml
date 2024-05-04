@@ -1,28 +1,14 @@
 version: 1.0
 runtime: 
   language: java
-  # Set the runtime environment variables here
+  # Specify the supported Java version here
+  javaConfiguration:
+    runtimeVersion: corretto17
   environment: 
     SPRING_PROFILES_ACTIVE: "production"
-    # DATABASE_URL: "your_database_url"
+    DATABASE_URL: "your_database_url"
     # Add any other environment variables your application needs
     
 build: 
-  # Specify the build command and runtime settings
   command: "mvn clean install"
-  # You can specify runtime options like the port
   port: 8080
-
-# Optionally, you can specify the deployment settings
-# deployment: 
-#   source: 
-#     type: github
-#     repository: your_username/your_repository
-#     branch: main
-#     subdirectory: your_subdirectory_if_needed
-
-# Optionally, you can configure networking settings
-# network: 
-#   ports: 
-#     - port: 8080
-#       protocol: tcp
